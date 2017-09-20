@@ -66,6 +66,8 @@ public class Pessoa extends JFrame {
 	MaskFormatter formasCpf = null;
 	JFormattedTextField txtCpf = null;
 	
+	model.Pessoa pessoaFisica = new model.Pessoa();
+	
 	public Pessoa (){
 		
 		super("Cadatro Pessoa Fisica");
@@ -243,6 +245,19 @@ public class Pessoa extends JFrame {
 			//btn Enviar
 				paine.add(btnSalvar);
 				btnSalvar.setBounds(60, 500, 80, 25);
+				btnSalvar.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent e){
+								pessoaFisica.setNome(txtNome.getText());
+								pessoaFisica.setEndereco(txtEnde.getText());
+								pessoaFisica.setBairro(txtBairro.getText());
+								pessoaFisica.setCep(txtCep.getText());
+								pessoaFisica.setCidade(txtCidade.getText());
+								pessoaFisica.setTelefone(txtTelefone.getText());
+								pessoaFisica.setCelular(txtCelular.getText());
+								pessoaFisica.setRg(txtRg.getText());
+								pessoaFisica.setCpf(txtCpf.getText());
+						}
+					});
 			
 		paine.setLayout(null); // posicionamento dos objetos do layout
 		this.setSize(350,600); // tamanho da tela
